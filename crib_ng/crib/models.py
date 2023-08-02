@@ -9,4 +9,6 @@ class Products(models.model):
 class Sale(models.model):
     product_sale = models.ForeignKey(Products, on_delete=models.CASCADE)
     time_sold = models.DateTimeField('time sold')
+    quantity_sold = models.IntegerField(default=0)
+    
 
