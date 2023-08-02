@@ -7,6 +7,6 @@ class Products(models.model):
     date_added = models.DateTimeField("date published")
 
 class Sale(models.model):
-    product_sale = models.IntegerField()
+    product_sale = models.ForeignKey(Products, on_delete=models.CASCADE)
     time_sold = models.DateTimeField('time sold')
-    
+
