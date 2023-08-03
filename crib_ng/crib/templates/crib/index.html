@@ -1,0 +1,12 @@
+{% if latest_product %}
+
+<ul>
+    {% for product in latest_product %}
+    <li><a href="/crib/{{product.id}} /"> {{product.product_name}}</a></li>
+    {% endfor %}
+</ul>
+
+{% else %}
+    <p>No product available</p>
+
+{% endif %}
