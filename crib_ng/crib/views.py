@@ -12,6 +12,6 @@ def results(request, product_id):
     return HttpResponse("You're looking at the result of %s" %product_id)
 
 def sale(request, product_id):
-    return HttpResponse("You're looking at the number of sale of %s" %product_id)
+    return HttpResponse("You're looking at the number of sale of %s Houses" %product_id)
 
 
