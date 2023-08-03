@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render 
 from .models import Products
+from django.http import Http404
 
 # Create your views here.
 def index(request):
@@ -13,8 +14,15 @@ def index(request):
 
     return HttpResponse(render(request, "crib/index.html", context))
 
+
 def detail(request, product_id):
-    return HttpResponse('You\'re looking at product %s' %product_id)
+    try:
+        product = Products.objects.get(pk=product_id)
+
+    except Products.DoesNotExist:
+        raise Http404("Product does not exist")
+    
+    return render(request, "crib/index.html", {"product": product})
 
 def results(request, product_id):
     return HttpResponse("You're looking at the result of %s" %product_id)
