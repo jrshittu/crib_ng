@@ -1,1 +1,10 @@
-{{ product }}
+<h1>
+    {{product.product_name}}
+</h1>
+
+<ul>
+{% for sale in product.product_name.all %}
+    <li>{{ sale.product_name }}</li>
+
+{% endfor %}
+</ul>
